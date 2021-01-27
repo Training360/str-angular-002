@@ -4,6 +4,9 @@
       <h1>
         {{ title }}
       </h1>
+      <h3>
+        {{ subTitle }}
+      </h3>
     </div>
   </div>
 
@@ -16,7 +19,7 @@
         <button [disabled]="btnDisabled" class="btn btn-warning">
           <i class="fa fa-check"></i>
         </button>
-        <button [disabled]="btnDisabled" class="btn btn-success">
+        <button (click)="onShowGreeting()" [disabled]="btnDisabled" class="btn btn-success">
           <i class="fa fa-user"></i>
         </button>
         <button [disabled]="btnDisabled" class="btn btn-danger">
@@ -25,4 +28,13 @@
       </div>
     </div>
   </div>
+
+  <div class="row">
+    <div class="col-12">
+      <app-user-detail [user]="users[0]" (delUser)="onDeleteUser($event)"></app-user-detail>
+      <app-user-detail [user]="users[1]" (delUser)="onDeleteUser($event)"></app-user-detail>
+      <app-user-detail [user]="users[2]" (delUser)="onDeleteUser($event)"></app-user-detail>
+    </div>
+  </div>
+
 </div>
